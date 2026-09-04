@@ -206,3 +206,7 @@ void clear(t_list *list) {
 
     list->size = 0;
 }
+
+int find(t_list *list, int item) {
+    return get_node_by_item(list, item) != NULL;
+}
