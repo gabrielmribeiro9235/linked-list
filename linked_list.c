@@ -86,3 +86,35 @@ t_node* get_node_by_index(t_list *list, int index) {
 
     return current_node;
 }
+
+int insert(t_list *list, int index, int elem) {
+    if (list == NULL || index > list->size || index < 0) {
+        return 0;
+    }
+
+    if (index == list->size) {
+        return append(list, elem);
+    }
+
+    t_node *previous_node = get_node_by_index(list, index - 1);
+
+    t_node *node = malloc(sizeof(t_node));
+
+    if (node == NULL) {
+        return 0;
+    }
+
+    node->item = elem;
+
+    if (previous_node == NULL) {
+        node->next = list->head;
+        list->head = node;
+    } else {
+        node->next = previous_node->next;
+        previous_node->next = node;
+    }
+
+    list->size++;
+
+    return 1;
+}
