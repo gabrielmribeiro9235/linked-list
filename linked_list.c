@@ -43,3 +43,30 @@ int size(t_list *list) {
 int is_empty(t_list *list) {
     return list->size == 0;
 }
+
+int append(t_list *list, int elem) {
+    if (list == NULL) {
+        return 0;
+    }
+
+    t_node *node = malloc(sizeof(t_node));
+
+    if (node == NULL) {
+        return 0;
+    }
+
+    node->item = elem;
+    node->next = NULL;
+
+    if (list->size == 0) {
+        list->head = node;
+        list->tail = node;
+    } else {
+        list->tail->next = node;
+        list->tail = node;
+    }
+
+    list->size++;
+
+    return 1;
+}
