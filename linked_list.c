@@ -210,3 +210,43 @@ void clear(t_list *list) {
 int find(t_list *list, int item) {
     return get_node_by_item(list, item) != NULL;
 }
+
+int remove_at(t_list* list, int index) {
+    if (list == NULL || index < 0 || index >= list->size) {
+        return 0;
+    }
+
+    if (index == 0) {
+        t_node *next = list->head->next;
+
+        free(list->head);
+        list->head = next;
+
+        list->size--;
+
+        if (list->size == 0) {
+            list->tail = NULL;
+        }
+
+        return 1;
+    }
+
+    t_node *previous = list->head;
+
+    for (int i = 0; i < index - 1; i++) {
+        previous = previous->next;
+    }
+
+    t_node *next = previous->next->next;
+
+    free(previous->next);
+    previous->next = next;
+
+    if (next == NULL) {
+        list->tail = previous;
+    }
+
+    list->size--;
+
+    return 1;
+}
