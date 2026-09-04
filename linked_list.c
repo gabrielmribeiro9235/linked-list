@@ -118,3 +118,47 @@ int insert(t_list *list, int index, int elem) {
 
     return 1;
 }
+
+int remove_item(t_list *list, int item) {
+    if (list == NULL || is_empty(list)) {
+        return 0;
+    }
+
+    if (list->head->item == item) {
+        t_node *next = list->head->next;
+
+        free(list->head);
+        list->head = next;
+
+        list->size--;
+
+        if (list->size == 0) {
+            list->tail = NULL;
+        }
+
+        return 1;
+    }
+
+    t_node *previous = list->head;
+
+    while (previous->next != NULL && previous->next->item != item) {
+        previous = previous->next;
+    }
+
+    if (previous->next == NULL) {
+        return 0;
+    }
+
+    t_node *next = previous->next->next;
+
+    free(previous->next);
+    previous->next = next;
+
+    if (next == NULL) {
+        list->tail = previous;
+    }
+
+    list->size--;
+
+    return 1;
+}
