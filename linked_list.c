@@ -35,3 +35,7 @@ void destroy_list(t_list *list) {
     free(list->tail);
     free(list);
 }
+
+int size(t_list *list) {
+    return list->size;
+}
