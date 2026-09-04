@@ -277,3 +277,21 @@ t_node* pop_front(t_list *list) {
 
     return head;
 }
+
+t_node* pop_back(t_list *list) {
+    if (list == NULL || is_empty(list)) {
+        return NULL;
+    }
+
+    t_node *tail = malloc(sizeof(t_node));
+
+    if (tail == NULL) {
+        return NULL;
+    }
+
+    *tail = *list->tail;
+
+    remove_at(list, list->size - 1);
+
+    return tail;
+}
