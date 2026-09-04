@@ -15,3 +15,23 @@ t_list* create_list() {
 
     return list;
 }
+
+void destroy_list(t_list *list) {
+    if (list == NULL) {
+        return;
+    }
+
+    if (list->size == 0) {
+        free(list);
+        return;
+    }
+
+    while (list->head != list->tail) {
+        t_node *next = list->head->next;
+        free(list->head);
+        list->head = next;
+    }
+
+    free(list->tail);
+    free(list);
+}
