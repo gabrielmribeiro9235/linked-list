@@ -187,3 +187,22 @@ void print_list(t_list *list) {
 
     printf("NULL");
 }
+
+void clear(t_list *list) {
+    if (list == NULL || list->size == 0) {
+        return;
+    }
+
+    while (list->head != list->tail) {
+        t_node *next = list->head->next;
+        free(list->head);
+        list->head = next;
+    }
+
+    free(list->tail);
+
+    list->head = NULL;
+    list->tail = NULL;
+
+    list->size = 0;
+}
