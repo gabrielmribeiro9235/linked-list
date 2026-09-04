@@ -250,3 +250,7 @@ int remove_at(t_list* list, int index) {
 
     return 1;
 }
+
+t_node* peek_front(t_list *list) {
+    return list != NULL ? list->head : NULL;
+}
