@@ -258,3 +258,22 @@ t_node* peek_front(t_list *list) {
 t_node* peek_back(t_list *list) {
     return list != NULL ? list->tail : NULL;
 }
+
+t_node* pop_front(t_list *list) {
+    if (list == NULL || is_empty(list)) {
+        return NULL;
+    }
+
+    t_node *head = malloc(sizeof(t_node));
+
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    head->item = list->head->item;
+    head->next = NULL;
+
+    remove_at(list, 0);
+
+    return head;
+}
