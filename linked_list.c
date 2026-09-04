@@ -70,3 +70,19 @@ int append(t_list *list, int elem) {
 
     return 1;
 }
+
+t_node* get_node_by_index(t_list *list, int index) {
+    if (list == NULL || index >= list->size || index < 0) {
+        return NULL;
+    }
+
+    int i = 0;
+    t_node *current_node = list->head;
+
+    while (i < index) {
+        current_node = current_node->next;
+        i++;
+    }
+
+    return current_node;
+}
