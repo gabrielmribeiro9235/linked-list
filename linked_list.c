@@ -39,3 +39,7 @@ void destroy_list(t_list *list) {
 int size(t_list *list) {
     return list->size;
 }
+
+int is_empty(t_list *list) {
+    return list->size == 0;
+}
