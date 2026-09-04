@@ -295,3 +295,23 @@ t_node* pop_back(t_list *list) {
 
     return tail;
 }
+
+void reverse(t_list *list) {
+    if (list == NULL || is_empty(list)) {
+        return;
+    }
+
+    t_node *previous = NULL;
+    t_node *current = list->head;
+
+    while (current != NULL) {
+        t_node *next = current->next;
+
+        current->next = previous;
+        previous = current;
+        current = next;
+    }
+
+    list->tail = list->head;
+    list->head = previous;
+}
