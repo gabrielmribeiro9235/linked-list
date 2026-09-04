@@ -162,3 +162,17 @@ int remove_item(t_list *list, int item) {
 
     return 1;
 }
+
+t_node* get_node_by_item(t_list *list, int item) {
+    if (list == NULL) {
+        return NULL;
+    }
+
+    t_node *current_node = list->head;
+
+    while (current_node != NULL && current_node->item != item) {
+        current_node = current_node->next;
+    }
+
+    return current_node;
+}
