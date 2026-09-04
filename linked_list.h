@@ -11,7 +11,7 @@ typedef struct {
     int size;
 } t_list;
 t_list* create_list();
-int destroy_list(t_list*);
+void destroy_list(t_list*);
 int size(t_list*);
 int is_empty(t_list*);
 int append(t_list*, int);
