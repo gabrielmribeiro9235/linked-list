@@ -254,3 +254,7 @@ int remove_at(t_list* list, int index) {
 t_node* peek_front(t_list *list) {
     return list != NULL ? list->head : NULL;
 }
+
+t_node* peek_back(t_list *list) {
+    return list != NULL ? list->tail : NULL;
+}
