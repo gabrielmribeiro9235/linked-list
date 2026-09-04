@@ -176,3 +176,14 @@ t_node* get_node_by_item(t_list *list, int item) {
 
     return current_node;
 }
+
+void print_list(t_list *list) {
+    t_node *current = list->head;
+
+    while (current != NULL) {
+        printf("%d -> ", current->item);
+        current = current->next;
+    }
+
+    printf("NULL");
+}
