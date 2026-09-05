@@ -21,7 +21,7 @@ void destroy_list(t_list *list) {
         return;
     }
 
-    if (list->size == 0) {
+    if (is_empty(list)) {
         free(list);
         return;
     }
@@ -41,7 +41,7 @@ int size(t_list *list) {
 }
 
 int is_empty(t_list *list) {
-    return list->size == 0;
+    return is_empty(list);
 }
 
 int append(t_list *list, int elem) {
@@ -58,7 +58,7 @@ int append(t_list *list, int elem) {
     node->item = elem;
     node->next = NULL;
 
-    if (list->size == 0) {
+    if (is_empty(list)) {
         list->head = node;
         list->tail = node;
     } else {
@@ -132,7 +132,7 @@ int remove_item(t_list *list, int item) {
 
         list->size--;
 
-        if (list->size == 0) {
+        if (is_empty(list)) {
             list->tail = NULL;
         }
 
@@ -189,7 +189,7 @@ void print_list(t_list *list) {
 }
 
 void clear(t_list *list) {
-    if (list == NULL || list->size == 0) {
+    if (list == NULL || is_empty(list)) {
         return;
     }
 
@@ -224,7 +224,7 @@ int remove_at(t_list* list, int index) {
 
         list->size--;
 
-        if (list->size == 0) {
+        if (is_empty(list)) {
             list->tail = NULL;
         }
 
