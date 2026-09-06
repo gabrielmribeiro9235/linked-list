@@ -404,3 +404,39 @@ t_list* merge(t_list *list1, t_list *list2) {
 
     return new_list;
 }
+
+void clone(t_list *src, t_list *dest) {
+    dest->head = NULL;
+    dest->tail = NULL;
+    dest->size = 0;
+
+    if (src == NULL || is_empty(src)) {
+        return;
+    }
+
+    t_node *source = src->head;
+    t_node *tail = NULL;
+
+    while (source != NULL) {
+        t_node *current = malloc(sizeof(t_node));
+
+        if (current == NULL) {
+            return;
+        }
+
+        current->item = source->item;
+        current->next = NULL;
+
+        if (tail == NULL) {
+            dest->head = current;
+        } else {
+            tail->next = current;
+        }
+
+        tail = current;
+        source = source->next;
+    }
+
+    dest->tail = tail;
+    dest->size = src->size;
+}
