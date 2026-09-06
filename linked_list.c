@@ -315,3 +315,32 @@ void reverse(t_list *list) {
     list->tail = list->head;
     list->head = previous;
 }
+
+void sort(t_list *list) {
+    if (list == NULL || is_empty(list)) {
+        return;
+    }
+
+    t_node *current = list->head;
+
+    for (int i = 0; i < list->size - 1; i++) {
+        t_node *min_node = current;
+        t_node *cursor = current->next;
+
+        for (int j = i + 1; j < list->size; j++) {
+            if (cursor->item < min_node->item) {
+                min_node = cursor;
+            }
+
+            cursor = cursor->next;
+        }
+
+        if (min_node != current) {
+            int swap = min_node->item;
+            min_node->item = current->item;
+            current->item = swap;
+        }
+
+        current = current->next;
+    }
+}
