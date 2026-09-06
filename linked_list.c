@@ -344,3 +344,63 @@ void sort(t_list *list) {
         current = current->next;
     }
 }
+
+t_list* merge(t_list *list1, t_list *list2) {
+    if (list1 == NULL || is_empty(list1)) {
+        free(list1);
+        return list2;
+    }
+
+    if (list2 == NULL || is_empty(list2)) {
+        free(list2);
+        return list1;
+    }
+
+    t_list *new_list = malloc(sizeof(t_list));
+
+    if (new_list == NULL) {
+        return NULL;
+    }
+
+    t_node *head = NULL;
+
+    t_node *current1 = list1->head;
+    t_node *current2 = list2->head;
+
+    if (current1->item < current2->item) {
+        head = current1;
+        current1 = current1->next;
+    } else {
+        head = current2;
+        current2 = current2->next;
+    }
+
+    t_node *tail = head;
+
+    while (current1 != NULL && current2 != NULL) {
+        if (current1->item <= current2->item) {
+            tail->next = current1;
+            current1 = current1->next;
+        } else {
+            tail->next = current2;
+            current2 = current2->next;
+        }
+
+        tail = tail->next;
+    }
+
+    tail->next = current1 != NULL ? current1 : current2;
+
+    while (tail->next != NULL) {
+        tail = tail->next;
+    }
+
+    new_list->head = head;
+    new_list->tail = tail;
+    new_list->size = list1->size + list2->size;
+
+    free(list1);
+    free(list2);
+
+    return new_list;
+}

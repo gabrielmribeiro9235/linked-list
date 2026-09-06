@@ -29,7 +29,7 @@ t_node* pop_front(t_list*);
 t_node* pop_back(t_list*);
 void reverse(t_list*);
 void sort(t_list*);
-void merge(t_list*, t_list*);
+t_list* merge(t_list*, t_list*);
 void clone(t_list*, t_list*);
 
 #endif
