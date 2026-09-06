@@ -41,7 +41,7 @@ int size(t_list *list) {
 }
 
 int is_empty(t_list *list) {
-    return is_empty(list);
+    return list->size == 0;
 }
 
 int append(t_list *list, int elem) {
