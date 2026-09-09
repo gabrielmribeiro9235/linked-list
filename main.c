@@ -91,6 +91,24 @@ int main() {
                 printf("List sorted succesfully\n");
 
                 break;
+            case 5: {
+                int item;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the item you want to remove: ");
+
+                scanf("%d", &item);
+
+                int remove_status = remove_item(list, item);
+
+                if (remove_status == 1) {
+                    printf("\n%d removed successfully\n", item);
+                } else {
+                    printf("\nFailed to remove\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
