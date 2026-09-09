@@ -270,6 +270,14 @@ int main() {
 
                 break;
             }
+            case 17:
+                reverse(list);
+
+                printf("-----------------------------------------------\n");
+
+                printf("The list has been reversed\n");
+
+                break;
             default:
                 break;
         }
