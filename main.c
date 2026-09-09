@@ -32,12 +32,21 @@ void menu() {
 int main() {
     t_list *list = create_list();
 
-    append(list, 1);
-    append(list, 4);
-    append(list, 9);
-    append(list, 20);
+    int opt = 0;
+    do {
+        menu();
+        scanf("%d", &opt);
 
-    print_list(list);
+        switch (opt) {
+            case 1:
+                printf("-----------------------------------------------\n");
+                print_list(list);
+                printf("\n");
+                break;
+            default:
+                break;
+        }
+    } while (opt != 20);
 
     destroy_list(list);
 
