@@ -330,6 +330,37 @@ int main() {
 
                 break;
             }
+            case 19: {
+                clear(list);
+
+                t_list *new_list = create_list();
+
+                int size;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the size of the new list: ");
+
+                scanf("%d", &size);
+
+                printf("\nPopulating the new list 1\n");
+                for (int i = 0; i < size; i++) {
+                    int item;
+
+                    printf("Item of node %d: ", i + 1);
+
+                    scanf("%d", &item);
+
+                    append(new_list, item);
+                }
+
+                clone(new_list, list);
+
+                printf("\nList cloned\n");
+
+                destroy_list(new_list);
+
+                break;
+            }
             default:
                 break;
         }
