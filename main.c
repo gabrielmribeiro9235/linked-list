@@ -218,8 +218,10 @@ int main() {
             case 13: {
                 t_node *node = peek_front(list);
 
+                printf("-----------------------------------------------\n");
+
                 if (node != NULL) {
-                    printf("\nFirst node:\n");
+                    printf("First node:\n");
                     printf("%d -> ", node->item);
                     if (node->next == NULL) {
                         printf("NULL\n");
@@ -235,8 +237,10 @@ int main() {
             case 14: {
                 t_node *node = peek_back(list);
 
+                printf("-----------------------------------------------\n");
+
                 if (node != NULL) {
-                    printf("\nLast node:\n");
+                    printf("Last node:\n");
                     printf("%d -> NULL\n", node->item);
                 } else {
                     printf("\nThe list is empty\n");
@@ -247,8 +251,10 @@ int main() {
             case 15: {
                 t_node *node = pop_front(list);
 
+                printf("-----------------------------------------------\n");
+
                 if (node != NULL) {
-                    printf("\nItem of the removed node: %d\n", node->item);
+                    printf("Item of the removed node: %d\n", node->item);
                 } else {
                     printf("\nThe list is empty\n");
                 }
@@ -260,8 +266,10 @@ int main() {
             case 16: {
                 t_node *node = pop_back(list);
 
+                printf("-----------------------------------------------\n");
+
                 if (node != NULL) {
-                    printf("\nItem of the removed node: %d\n", node->item);
+                    printf("Item of the removed node: %d\n", node->item);
                 } else {
                     printf("\nThe list is empty\n");
                 }
@@ -363,6 +371,8 @@ int main() {
                 break;
             }
             case 20:
+                printf("-----------------------------------------------\n");
+                printf("Leaving the program\n");
                 break;
             default:
                 printf("-----------------------------------------------\n");
@@ -370,6 +380,9 @@ int main() {
                 break;
         }
     } while (opt != 20);
+
+    printf("-----------------------------------------------\n");
+    printf("Freeing up memory\n");
 
     destroy_list(list);
 
