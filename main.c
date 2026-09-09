@@ -145,6 +145,30 @@ int main() {
 
                 break;
             }
+            case 8: {
+                int item;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the item for which you want to search\nthe node: ");
+
+                scanf("%d", &item);
+
+                t_node *node = get_node_by_item(list, item);
+
+                if (node != NULL) {
+                    printf("\nNode:\n");
+                    printf("%d -> ", node->item);
+                    if (node->next == NULL) {
+                        printf("NULL\n");
+                    } else {
+                        printf("%d\n", node->next->item);
+                    }
+                } else {
+                    printf("\n%d IS NOT on the list\n", item);
+                }
+
+                break;
+            }
             default:
                 break;
         }
