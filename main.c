@@ -31,6 +31,8 @@ void menu() {
 
 int main() {
     t_list *list = create_list();
+    t_list *list1 = create_list();
+    t_list *list2 = create_list();
 
     int opt = 0;
     do {
@@ -278,6 +280,56 @@ int main() {
                 printf("The list has been reversed\n");
 
                 break;
+            case 18: {
+                clear(list);
+
+                int size1, size2;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the size of the first list: ");
+
+                scanf("%d", &size1);
+
+                printf("Enter the size of the second list: ");
+
+                scanf("%d", &size2);
+
+                printf("\nPopulating list 1\n");
+                for (int i = 0; i < size1; i++) {
+                    int item;
+
+                    printf("Item of node %d: ", i + 1);
+
+                    scanf("%d", &item);
+
+                    append(list1, item);
+                }
+
+                printf("\nPopulating list 2\n");
+                for (int i = 0; i < size2; i++) {
+                    int item;
+
+                    printf("Item of node %d: ", i + 1);
+
+                    scanf("%d", &item);
+
+                    append(list2, item);
+                }
+
+                sort(list1);
+
+                sort(list2);
+
+                list = merge(list1, list2);
+
+                if (list != NULL) {
+                    printf("\nMerge done successfully\n");
+                } else {
+                    printf("\nFailed to merge\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
