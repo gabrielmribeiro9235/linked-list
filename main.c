@@ -31,8 +31,6 @@ void menu() {
 
 int main() {
     t_list *list = create_list();
-    t_list *list1 = create_list();
-    t_list *list2 = create_list();
 
     int opt = 0;
     do {
@@ -283,6 +281,9 @@ int main() {
             case 18: {
                 clear(list);
 
+                t_list *list1 = create_list();
+                t_list *list2 = create_list();
+
                 int size1, size2;
 
                 printf("-----------------------------------------------\n");
@@ -371,8 +372,9 @@ int main() {
     } while (opt != 20);
 
     destroy_list(list);
-    destroy_list(list1);
-    destroy_list(list2);
+
+    printf("-----------------------------------------------\n");
+    printf("End of the program\n");
 
     return 0;
 }
