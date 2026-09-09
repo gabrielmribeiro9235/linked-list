@@ -61,6 +61,29 @@ int main() {
 
                 break;
             }
+            case 3: {
+                int number;
+                int index;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the number you want to insert: ");
+
+                scanf("%d", &number);
+
+                printf("Enter the index you want to insert: ");
+
+                scanf("%d", &index);
+
+                int insert_status = insert(list, index, number);
+
+                if (insert_status == 1) {
+                    printf("\n%d inserted successfully\n", number);
+                } else {
+                    printf("\nFailed to insert\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
