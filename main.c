@@ -43,6 +43,24 @@ int main() {
                 print_list(list);
                 printf("\n");
                 break;
+            case 2: {
+                int number;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the number you want to append: ");
+
+                scanf("%d", &number);
+
+                int append_status = append(list, number);
+
+                if (append_status == 1) {
+                    printf("\n%d appended successfully\n", number);
+                } else {
+                    printf("\nFailed to append\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
