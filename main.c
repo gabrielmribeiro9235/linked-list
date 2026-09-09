@@ -198,6 +198,15 @@ int main() {
                 printf("List size: %d\n", size(list));
 
                 break;
+            case 11:
+                printf("-----------------------------------------------\n");
+                if (is_empty(list)) {
+                    printf("The list is empty\n");
+                } else {
+                    printf("The list is not empty\n");
+                }
+
+                break;
             default:
                 break;
         }
