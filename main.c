@@ -232,6 +232,18 @@ int main() {
 
                 break;
             }
+            case 14: {
+                t_node *node = peek_back(list);
+
+                if (node != NULL) {
+                    printf("\nLast node:\n");
+                    printf("%d -> NULL\n", node->item);
+                } else {
+                    printf("\nThe list is empty\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
