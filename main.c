@@ -84,6 +84,13 @@ int main() {
 
                 break;
             }
+            case 4:
+                sort(list);
+
+                printf("-----------------------------------------------\n");
+                printf("List sorted succesfully\n");
+
+                break;
             default:
                 break;
         }
