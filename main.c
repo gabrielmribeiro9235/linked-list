@@ -257,6 +257,19 @@ int main() {
 
                 break;
             }
+            case 16: {
+                t_node *node = pop_back(list);
+
+                if (node != NULL) {
+                    printf("\nItem of the removed node: %d\n", node->item);
+                } else {
+                    printf("\nThe list is empty\n");
+                }
+
+                free(node);
+
+                break;
+            }
             default:
                 break;
         }
