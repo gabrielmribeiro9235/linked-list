@@ -207,6 +207,14 @@ int main() {
                 }
 
                 break;
+            case 12:
+                clear(list);
+
+                printf("-----------------------------------------------\n");
+
+                printf("The list has been cleared\n");
+
+                break;
             default:
                 break;
         }
