@@ -215,6 +215,23 @@ int main() {
                 printf("The list has been cleared\n");
 
                 break;
+            case 13: {
+                t_node *node = peek_front(list);
+
+                if (node != NULL) {
+                    printf("\nFirst node:\n");
+                    printf("%d -> ", node->item);
+                    if (node->next == NULL) {
+                        printf("NULL\n");
+                    } else {
+                        printf("%d\n", node->next->item);
+                    }
+                } else {
+                    printf("\nThe list is empty\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
