@@ -361,12 +361,18 @@ int main() {
 
                 break;
             }
+            case 20:
+                break;
             default:
+                printf("-----------------------------------------------\n");
+                printf("Invalid choice\n");
                 break;
         }
     } while (opt != 20);
 
     destroy_list(list);
+    destroy_list(list1);
+    destroy_list(list2);
 
     return 0;
 }
