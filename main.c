@@ -193,6 +193,11 @@ int main() {
 
                 break;
             }
+            case 10:
+                printf("-----------------------------------------------\n");
+                printf("List size: %d\n", size(list));
+
+                break;
             default:
                 break;
         }
