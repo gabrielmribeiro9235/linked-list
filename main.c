@@ -109,6 +109,24 @@ int main() {
 
                 break;
             }
+            case 6: {
+                int index;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the index you want to remove: ");
+
+                scanf("%d", &index);
+
+                int remove_status = remove_at(list, index);
+
+                if (remove_status == 1) {
+                    printf("\nIndex %d removed successfully\n", index);
+                } else {
+                    printf("\nFailed to remove\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
