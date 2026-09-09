@@ -169,6 +169,30 @@ int main() {
 
                 break;
             }
+            case 9: {
+                int index;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the index where you want to search\nthe node: ");
+
+                scanf("%d", &index);
+
+                t_node *node = get_node_by_index(list, index);
+
+                if (node != NULL) {
+                    printf("\nNode:\n");
+                    printf("%d -> ", node->item);
+                    if (node->next == NULL) {
+                        printf("NULL\n");
+                    } else {
+                        printf("%d\n", node->next->item);
+                    }
+                } else {
+                    printf("\nThere is NO node in the index %d\n", index);
+                }
+
+                break;
+            }
             default:
                 break;
         }
