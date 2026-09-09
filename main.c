@@ -127,6 +127,24 @@ int main() {
 
                 break;
             }
+            case 7: {
+                int item;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the item you want to search for: ");
+
+                scanf("%d", &item);
+
+                int exist = find(list, item);
+
+                if (exist == 1) {
+                    printf("\n%d IS on the list\n", item);
+                } else {
+                    printf("\n%d IS NOT on the list\n", item);
+                }
+
+                break;
+            }
             default:
                 break;
         }
