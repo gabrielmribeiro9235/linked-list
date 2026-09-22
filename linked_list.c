@@ -447,6 +447,10 @@ void clone(t_list *src, t_list *dest) {
 }
 
 t_node* find_middle(t_list *list) {
+    if (list == NULL || is_empty(list)) {
+        return NULL;
+    }
+
     t_node *slow = list->head;
     t_node *fast = slow->next;
 
