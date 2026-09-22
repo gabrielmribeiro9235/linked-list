@@ -371,7 +371,24 @@ int main() {
 
                 break;
             }
-            case 20:
+            case 20: {
+                t_node *middle = find_middle(list);
+
+                if (middle != NULL) {
+                    printf("\nMiddle node:\n");
+                    printf("%d -> ", middle->item);
+                    if (middle->next == NULL) {
+                        printf("NULL\n");
+                    } else {
+                        printf("%d\n", middle->next->item);
+                    }
+                } else {
+                    printf("\nThe list is empty\n");
+                }
+
+                break;
+            }
+            case 21:
                 printf("-----------------------------------------------\n");
                 printf("Leaving the program\n");
                 break;
@@ -380,7 +397,7 @@ int main() {
                 printf("Invalid choice\n");
                 break;
         }
-    } while (opt != 20);
+    } while (opt != 21);
 
     printf("-----------------------------------------------\n");
     printf("Freeing up memory\n");
