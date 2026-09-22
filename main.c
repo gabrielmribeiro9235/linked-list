@@ -24,7 +24,8 @@ void menu() {
     printf("17 - reverse\n");
     printf("18 - merge\n");
     printf("19 - clone\n");
-    printf("20 - exit\n");
+    printf("20 - find_middle\n");
+    printf("21 - exit\n");
     printf("-----------------------------------------------\n");
     printf("Your choice: ");
 }
