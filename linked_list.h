@@ -31,5 +31,6 @@ void reverse(t_list*);
 void sort(t_list*);
 t_list* merge(t_list*, t_list*);
 void clone(t_list*, t_list*);
+t_node* find_middle(t_list*);
 
 #endif
