@@ -461,3 +461,23 @@ t_node* find_middle(t_list *list) {
 
     return slow;
 }
+
+t_node* find_nth_from_end(t_list *list, int n) {
+    if (list == NULL || is_empty(list)) {
+        return NULL;
+    }
+
+    t_node *first = list->head;
+    t_node *second = first;
+
+    for (int i = 0; i < n - 1; i++) {
+        second = second->next;
+    }
+
+    while (second->next != NULL) {
+        first = first->next;
+        second = second->next;
+    }
+
+    return first;
+}
