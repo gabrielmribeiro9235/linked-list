@@ -25,7 +25,8 @@ void menu() {
     printf("18 - merge\n");
     printf("19 - clone\n");
     printf("20 - find_middle\n");
-    printf("21 - exit\n");
+    printf("21 - find_nth_from_end\n");
+    printf("22 - exit\n");
     printf("-----------------------------------------------\n");
     printf("Your choice: ");
 }
@@ -388,7 +389,7 @@ int main() {
 
                 break;
             }
-            case 21:
+            case 22:
                 printf("-----------------------------------------------\n");
                 printf("Leaving the program\n");
                 break;
@@ -397,7 +398,7 @@ int main() {
                 printf("Invalid choice\n");
                 break;
         }
-    } while (opt != 21);
+    } while (opt != 22);
 
     printf("-----------------------------------------------\n");
     printf("Freeing up memory\n");
