@@ -389,6 +389,30 @@ int main() {
 
                 break;
             }
+            case 21: {
+                int n;
+
+                printf("-----------------------------------------------\n");
+                printf("Enter the the position before end: ");
+
+                scanf("%d", &n);
+
+                t_node *node = find_nth_from_end(list, n);
+
+                if (node != NULL) {
+                    printf("\nNode:\n");
+                    printf("%d -> ", node->item);
+                    if (node->next == NULL) {
+                        printf("NULL\n");
+                    } else {
+                        printf("%d\n", node->next->item);
+                    }
+                } else {
+                    printf("\nThe list is empty\n");
+                }
+
+                break;
+            }
             case 22:
                 printf("-----------------------------------------------\n");
                 printf("Leaving the program\n");
